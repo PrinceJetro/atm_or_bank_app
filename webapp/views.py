@@ -4,5 +4,5 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    message = "Example jetro project on vercel"
+    message = "Deployed"
     return HttpResponse(message)
