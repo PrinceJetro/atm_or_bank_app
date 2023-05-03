@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container-fluiid">
+        <div class="intro" id="intro">
+            <h1>JMG</h1>
+            <br>
+            <p>Mobile Banking</p>
+
+        </div>
+
+        <div class="main" id="main">
+            <form action="/action_page.php" method="post">
+                {% csrf_token %}
+                <div class="imgcontainer">
+                  <img src="https://picsum.photos/500" alt="Avatar" class="avatar">
+                </div>
+              
+                <div class="container">
+                  <label for="uname"><b>Username</b></label>
+                  <input type="text" placeholder="Enter Username" name="uname" required>
+              
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+                  <label for="showPassword">
+                    <input type="checkbox" id="showPassword"> Show password
+                  </label>
+                      
+                  <button type="submit">Login</button>
+                </div>
+              
+                <div class="container">
+                  <a href="#"><button type="button" class="cancelbtn">Open new account</button></a>
+                  <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+              </form>
+              
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>    
+
+    <script src="{% static 'js/index.js'%}"></script>
+</body>
+</html>
