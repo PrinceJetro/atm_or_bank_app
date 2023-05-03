@@ -9,7 +9,121 @@
     <title>Index</title>
     <link rel="stylesheet" href="{% static 'styles/index.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+
+    <style>
+      /* setting background image*/
+body{
+  background-image: url("https://www.pixelstalk.net/wp-content/uploads/images5/Cool-White-Wallpaper-Free-Download.jpg");
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Intro being the page stuff that will display as a form of loading before the main contents are loaded*/
+
+.intro{
+  background-image: url("https://images.unsplash.com/photo-1635545195955-e65d68631341?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80");
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 900px;
+  width: 100%;
+  transition: opacity 1s ease-out;
+}
+
+.intro h1{
+  margin-top: 20%;
+  color: red;
+}
+.intro p{
+  margin-top: 90%;
+}
+/* setting intro to look good on pcs*/
+
+@media only screen and (min-width: 600px) {
+  .intro h1{
+      margin-top: 5%;
+      color: red;
+  }
+  .intro p{
+      margin-top: 25%;
+  }
+  
+}
+
+
+
+input[type=text], input[type=password] {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+box-sizing: border-box;
+}
+
+button {
+background-color: #04AA6D;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+}
+
+button:hover {
+opacity: 0.8;
+}
+
+.cancelbtn {
+width: auto;
+padding: 10px 18px;
+background-color: #f44336;
+}
+
+.imgcontainer {
+text-align: center;
+margin: 24px 0 12px 0;
+}
+
+img.avatar {
+width: 40%;
+border-radius: 50%;
+}
+
+.container {
+padding: 16px;
+}
+
+span.psw {
+float: right;
+padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+span.psw {
+   display: block;
+   float: none;
+}
+.cancelbtn {
+   width: 100%;
+}
+}
+
+    </style>
+
+  </head>
 <body>
     <div class="container-fluiid">
         <div class="intro" id="intro">
@@ -59,6 +173,32 @@
 
     </div>    
 
-    <script src="{% static 'js/index.js'%}"></script>
+    <script src="{% static 'js/index.js'%}">
+      const myTimeout = setTimeout(load, 5000);
+document.getElementById("main").style.display="none"
+
+// JavaScript function to hide the div element
+function load() {
+    var div = document.getElementById('intro');
+    div.style.opacity = 0;
+    setTimeout(function() {
+      div.style.display = 'none';
+    }, 500); // 500 milliseconds = 0.5 seconds transition time
+    document.getElementById("main").style.display="block"
+  }
+  
+function togglePassword(){
+    var passwordInput = document.getElementById('password');
+  var showPasswordCheckbox = document.getElementById('showPassword');
+  if (showPasswordCheckbox.checked) {
+    passwordInput.type = 'text';
+  } else {
+    passwordInput.type = 'password';
+  }
+}
+var showPasswordCheckbox = document.getElementById('showPassword');
+showPasswordCheckbox.addEventListener('change', togglePassword);
+
+    </script>
 </body>
 </html>
